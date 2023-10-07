@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Space+Mono:wght@700&display=swap');
+
+:root {
+  --white: #FFFFFF;
+
+  --light-gray: #F1F2F4;
+  --gray: #5E6670;
+  --dark-gray: #18191C;
+
+  --blue: #0A65CC;
+  --gray-blue: #E7F0FA;
+}

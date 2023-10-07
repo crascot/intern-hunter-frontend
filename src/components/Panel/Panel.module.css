@@ -1,0 +1,126 @@
+.panel,
+.panel div,
+.panel div span {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.panel {
+    max-width: 1320px;
+    width: 100%;
+    padding: 20px 0;
+    margin: 0 auto;
+}
+
+.logo {
+    align-items: center !important;
+}
+.logo h3 {
+    margin: 0 0 0 8px;
+    display: flex;
+    align-items: center;
+}
+
+.panel div:first-child {
+    max-width: 843px;
+    width: 100%;
+}
+
+.filter {
+    align-items: center !important;
+    max-width: 668px;
+    width: 100%;
+    justify-content: flex-start !important;
+    border-radius: 8px;
+    padding: 0 9px;
+    border: 1px solid var(--gray-blue);
+    background: var(--white);
+    overflow: hidden;
+}
+.filter button {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    border: none;
+    background-color: var(--white);
+    cursor: pointer;
+    padding: 0 20px 0 24px;
+    height: 100%;
+    margin-left: -10px;
+    border-radius: 8px 0 0 8px;
+    margin-right: -1px;
+    transition: 0.4s;
+    user-select: none;
+}
+.filter button:hover {
+    transition: 0.4s;
+    background-color: var(--gray-blue);
+}
+.filter button svg {
+    margin-left: 12px;
+}
+.filter button img {
+    margin-right: 12px;
+}
+
+.filter input {
+    width: 90%;
+    cursor: pointer;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-left: 1px solid var(--gray-blue);
+    height: 32px;
+    margin: 0 auto;
+    padding-left: 56px;
+}
+
+.filter label {
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+}
+.filter label:before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    margin-top: 4px;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    background: url('../../icons//search.svg');
+    background-repeat: no-repeat;
+}
+
+.buttons {
+    max-width: 253px;
+    width: 100%;
+}
+.buttons button {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    background-color: var(--white);
+}
+.buttons button:first-child {
+    color: var(--blue) !important;
+    border-color: var(--gray-blue);
+    transition: 0.4s;
+}
+.buttons button:first-child:hover {
+    border-color: var(--blue);
+    transition: 0.4s;
+}
+
+.buttons button:last-child {
+    color: var(--white);
+    background-color: var(--blue) !important;
+    border-color: var(--blue) !important;
+    transition: 0.4s;
+}
+.buttons button:last-child:hover {
+    color: var(--blue);
+    background-color: var(--white) !important;
+    transition: 0.4s;
+}

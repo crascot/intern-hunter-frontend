@@ -1,0 +1,19 @@
+.container {
+    background-color: var(--light-gray);
+    padding: 109px 0 100px 0;
+}
+
+.mainSearch {
+    max-width: 1320px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.mainSearch div:first-child {
+    max-width: 679px;
+    width: 100%;
+}
+.mainSearch div:last-child img {
+    width: 492px;
+}
