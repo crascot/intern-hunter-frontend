@@ -1,0 +1,6 @@
+.footer {
+    background-color: var(--dark-gray);
+}
+.footer h1 {
+    color: var(--white);
+}

@@ -17,29 +17,3 @@ root.render(
 );
 
 export const testCallback = () => console.log('test');
-export const testLinks = [
-  {
-    text: 'Home',
-    link: '/'
-  },
-  {
-    text: 'Find job',
-    link: '/'
-  },
-  {
-    text: 'Empoyers',
-    link: '/'
-  },
-  {
-    text: 'Candidates',
-    link: '/'
-  },
-  {
-    text: 'Pricing Plans',
-    link: '/'
-  },
-  {
-    text: 'Customer Supports',
-    link: '/'
-  },
-]

@@ -16,6 +16,7 @@
     align-items: center !important;
 }
 .logo h3 {
+    white-space: nowrap;
     margin: 0 0 0 8px;
     display: flex;
     align-items: center;
@@ -24,12 +25,15 @@
 .panel div:first-child {
     max-width: 843px;
     width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .filter {
     align-items: center !important;
-    max-width: 668px;
+    max-width: 610px;
     width: 100%;
+    height: 48px;
     justify-content: flex-start !important;
     border-radius: 8px;
     padding: 0 9px;
@@ -93,34 +97,48 @@
     background-repeat: no-repeat;
 }
 
-.buttons {
-    max-width: 253px;
-    width: 100%;
-}
-.buttons button {
+.buttons a {
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
     background-color: var(--white);
 }
-.buttons button:first-child {
+.buttons a:first-child {
     color: var(--blue) !important;
     border-color: var(--gray-blue);
     transition: 0.4s;
 }
-.buttons button:first-child:hover {
+.buttons a:first-child:hover {
     border-color: var(--blue);
     transition: 0.4s;
 }
 
-.buttons button:last-child {
+.buttons a:last-child {
+    margin-left: 12px;
     color: var(--white);
     background-color: var(--blue) !important;
     border-color: var(--blue) !important;
     transition: 0.4s;
 }
-.buttons button:last-child:hover {
+.buttons a:last-child:hover {
     color: var(--blue);
     background-color: var(--white) !important;
     transition: 0.4s;
+}
+
+@media (max-width: 1350px) {
+    .panel {
+        max-width: 1000px;
+    }
+    .filter {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+@media (max-width: 1070px) {
+    .panel div {
+        margin: 0 auto;
+        padding: 0 30px;
+    }
 }

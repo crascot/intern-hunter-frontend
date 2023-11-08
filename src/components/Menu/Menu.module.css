@@ -1,0 +1,62 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    background: rgba(24, 25, 28, 0.9);
+}
+
+.menu {
+    margin: 0;
+    width: 30vw;
+    height: 100vh;
+    padding: 0;
+    background-color: var(--white);
+    padding: 25px;
+}
+.menu span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu span button {
+    border: none;
+    background-color: var(--white);
+    cursor: pointer;
+    transition: 0.4s;
+    padding: 0;
+    border-radius: 50px;
+    width: 24px;
+    height: 24px;
+}
+.menu svg {
+    width: inherit;
+    height: inherit;
+}
+.menu span button:hover {
+    filter: invert(81%) sepia(84%) saturate(0%) hue-rotate(14deg) brightness(106%) contrast(101%);
+    transition: 0.4s;
+}
+
+.menu ul {
+    padding: 0;
+}
+.menu ul li {
+    margin: 5px 0;
+    border: 1px solid var(--white);
+    border-radius: 10px;
+    transition: 0.2s;
+}
+.menu ul li:hover,
+.active {
+    background: #e7f0fa;
+    border: 1px solid var(--blue) !important;
+    transition: 0.2s;
+}
+
+.menu ul li a {
+    padding: 15px 0;
+    padding-left: 15px;
+    display: flex;
+}

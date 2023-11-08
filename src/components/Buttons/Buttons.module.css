@@ -6,4 +6,5 @@
     border-style: solid !important;
     user-select: none;
     cursor: pointer;
+    border: none;
 }

@@ -1,6 +1,6 @@
-export interface NavigationType {
+export interface MenuType {
     links: linksType[],
-    current: string
+    changeMenuActive: () => void
 }
 
 type linksType = {

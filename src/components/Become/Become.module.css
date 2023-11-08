@@ -1,0 +1,97 @@
+.become {
+    max-width: 1320px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 0 0 100px 0;
+}
+
+.become li {
+    max-width: 548px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 8px;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.become li h2 {
+    width: 100%;
+    font-size: 32px !important;
+}
+.become li p {
+    margin: 16px 0;
+    width: 312px;
+}
+
+.become span {
+    width: 100%;
+}
+.become a {
+    background-color: var(--white);
+    border: none !important;
+    color: var(--blue);
+    font-weight: 600;
+    transition: 0.4s;
+}
+.become a:hover {
+    background-color: var(--blue);
+    color: var(--white);
+    transition: 0.4s;
+    border: 1px solid var(--white);
+}
+
+.become li:nth-child(2) a {
+    border: 1px solid var(--blue) !important;
+}
+.become li:nth-child(2) a:hover {
+    border: 1px solid var(--white) !important;
+}
+
+.become li:nth-child(1) p {
+    color: var(--gray);
+}
+
+.become li:nth-child(2) {
+    color: var(--white);
+    background-size: 140%;
+}
+
+@media (max-width: 1295px) {
+    .become {
+        justify-content: center;
+    }
+    .become li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 689px) {
+    .become {
+        max-width: 90vw;
+    }
+    .become li {
+        max-width: 340px;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .become li p {
+        width: 100%;
+    }
+    .become li:nth-child(2) {
+        background-image: none !important;
+        background-color: var(--blue);
+    }
+}
+
+@media (max-width: 370px) {
+    .become li {
+        max-width: inherit;
+    }
+}

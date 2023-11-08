@@ -1,16 +1,17 @@
-import { testLinks } from '../..'
-import Navigation from '../../components/Navigation/Navigation'
-import Panel from '../../components/Panel/Panel'
+import Become from '../../components/Become/Become'
+import HowWork from './HowWork/HowWork'
 import MainSearch from './MainSearch/MainSearch'
+import Footer from '../../components/Footer/Footer'
+import NavbarMenuWrapper from '../../components/NavbarMenuWrapper/NavbarMenuWrapper'
 
-const Main = () => {
-    return (
-        <>
-            <Navigation links={testLinks} />
-            <Panel />
-            <MainSearch />
-        </>
-    )
-}
+const Main = () => (
+    <>
+        <NavbarMenuWrapper current='Домой' />
+        <MainSearch />
+        <HowWork />
+        <Become />
+        <Footer />
+    </>
+)
 
 export default Main
