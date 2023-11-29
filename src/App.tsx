@@ -1,12 +1,12 @@
 import { ElementType, lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import { auctions, createAuction, profile, login, main, register } from './endpoints';
 const LazyMain = lazy(() => import('./pages/Main/Main'))
 const LazyAuctions = lazy(() => import('./pages/Auctions/Auctions'))
 const LazyProfile = lazy(() => import('./pages/Profile/Profile'))
-const LazyLogin = lazy(() => import('./pages/Login/Login'))
-const LazyRegister = lazy(() => import('./pages/Register/Register'))
+const LazyLogin = lazy(() => import('./pages/LoginRegisterPages/Login/Login'))
+const LazyRegister = lazy(() => import('./pages/LoginRegisterPages/Register/Register'))
 const LazyCreateAuction = lazy(() => import('./pages/CreateAuction/CreateAuction'))
 
 const withSuspense = (Component: ElementType) => (
@@ -55,6 +55,7 @@ function App() {
             />
           )
         }
+        <Route path='*' element={<Navigate to='..' />} />
       </Routes>
     </BrowserRouter>
   );

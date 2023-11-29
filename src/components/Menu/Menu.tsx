@@ -1,6 +1,7 @@
 import React from 'react'
 import s from './Menu.module.css'
 import { ReactComponent as Cansel } from '../../icons/cancel.svg'
+import { ReactComponent as Logo } from '../../icons/logo.svg'
 import { MenuType } from '../../types/menuType'
 
 const Menu: React.FC<MenuType> = ({ links, changeMenuActive }) => {
@@ -8,7 +9,7 @@ const Menu: React.FC<MenuType> = ({ links, changeMenuActive }) => {
     <div className={s.container} onClick={changeMenuActive}>
       <div className={s.menu} onClick={(e) => e.stopPropagation()}>
         <span>
-          <h2>Intern Hunter</h2>
+          <Logo />
           <button onClick={changeMenuActive}><Cansel /></button>
         </span>
         <ul>

@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
-import { ReactComponent as Logo } from '../../icons/logo.svg'
-import s from './Register.module.css'
-import Button from '../../components/Buttons/Button'
-import { testCallback } from '../..'
-import { registerStudent, registerEmployer } from '../../endpoints'
-import { RoleType } from '../../types/Form'
+import { ReactComponent as Logo } from '../../../icons/logo.svg'
+import s from '../LoginRegister.module.css'
+import Button from '../../../components/Buttons/Button'
+import { testCallback } from '../../..'
+import { loginStudent, loginEmployer } from '../../../endpoints'
+import { RoleType } from '../../../types/Form'
 
-const Register: React.FC = () => {
+const Login: React.FC = () => {
   const { role } = useParams<{ role: RoleType }>();
   const navigate = useNavigate();
 
@@ -22,7 +22,7 @@ const Register: React.FC = () => {
   }
 
   return (
-    <div className={s.register}>
+    <div className={s.loginRegister}>
       <div className={s.logo}>
         <NavLink to='/'>
           <Logo />
@@ -32,22 +32,22 @@ const Register: React.FC = () => {
       {
         role === 'student' ?
           <form>
-            <h2>Зарегистрироваться как студент</h2>
+            <h2>Войти как студент</h2>
             <input placeholder='Имя' type="text" />
             <input placeholder='Фамилия' type="text" />
             <input placeholder='Очество' type="text" />
             <input placeholder='Пароль' type="password" />
-            <Button callback={testCallback} text='Зарегистрироваться' />
-            <NavLink to={registerEmployer}>Я представитель компании</NavLink>
+            <Button callback={testCallback} text='Войти' />
+            <NavLink to={loginEmployer}>Я представитель компании</NavLink>
           </form>
           :
           role === 'employer' ?
             <form>
-              <h2>Зарегистрироваться как представитель</h2>
+              <h2>Войти как представитель</h2>
               <input placeholder='Название вашей компании' type="text" />
               <input placeholder='Пароль' type="password" />
-              <Button callback={testCallback} text='Зарегистрироваться' />
-              <NavLink to={registerStudent}>Я студент</NavLink>
+              <Button callback={testCallback} text='Войти' />
+              <NavLink to={loginStudent}>Я студент</NavLink>
             </form>
             :
             ''
@@ -56,4 +56,4 @@ const Register: React.FC = () => {
   )
 }
 
-export default Register
+export default Login

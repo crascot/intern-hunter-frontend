@@ -1,4 +1,4 @@
-.register {
+.loginRegister {
     width: 100%;
     height: 94vh;
     padding: 3vh 0;
@@ -14,16 +14,16 @@
     margin-left: 5px;
 }
 
-.register form {
+.loginRegister form {
     width: 600px;
     margin: 20vh auto 0 auto;
     text-align: center;
     padding: 15px;
 }
-.register form h2 {
+.loginRegister form h2 {
     margin-bottom: 30px;
 }
-.register form input {
+.loginRegister form input {
     width: 558px;
     height: 40px;
     margin: 8px 0;
@@ -36,13 +36,13 @@
     padding-right: 20px;
     transition: 0.4s;
 }
-.register form input:hover,
-.register form input:focus {
+.loginRegister form input:hover,
+.loginRegister form input:focus {
     background-color: var(--gray-blue);
     transition: 0.4s;
 }
 
-.register form button {
+.loginRegister form button {
     font-weight: 600;
     width: inherit !important;
     background-color: var(--blue);
@@ -50,14 +50,31 @@
     transition: 0.4s;
     margin-bottom: 15px;
 }
-.register form button:hover {
+.loginRegister form button:hover {
     background-color: var(--white);
     color: var(--blue);
     transition: 0.4s;
 }
-.register form a {
+.loginRegister form a {
     color: var(--gray);
 }
-.register form a:hover {
+.loginRegister form a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+    .loginRegister {
+        height: 80vh;
+    }
+
+    .loginRegister form {
+        width: 300px;
+        margin-top: 15vh;
+    }
+    .loginRegister form h2 {
+        font-size: 27px !important;
+    }
+    .loginRegister form input {
+        width: 258px;
+    }
 }

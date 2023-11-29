@@ -1,0 +1,59 @@
+.filter {
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-radius: 8px;
+}
+
+.filter label {
+    width: 57vw;
+    cursor: pointer;
+    position: relative;
+}
+
+.filter label:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    background: url('../../icons/search.svg');
+    background-repeat: no-repeat;
+}
+.filter label input {
+    margin-left: 40px;
+}
+
+.filter button {
+    background-color: var(--blue);
+    color: var(--white);
+    transition: 0.4s;
+}
+.filter button:hover {
+    background-color: var(--white);
+    color: var(--blue);
+    transition: 0.4s;
+}
+
+@media (max-width: 1070px) {
+    .filter {
+        width: 90%;
+    }
+}
+
+@media (max-width: 500px) {
+    .filter {
+        justify-content: center;
+        gap: 20px;
+    }
+    .filter label {
+        margin-left: 60px;
+    }
+}
