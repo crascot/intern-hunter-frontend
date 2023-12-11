@@ -1,8 +1,6 @@
 import { ReactComponent as Logo } from '../../icons/logo.svg'
-import { ReactComponent as Dropdown } from '../../icons/dropdown.svg'
 import { ReactComponent as MenuIcon } from '../../icons/menu.svg'
 import s from './Panel.module.css'
-import { useAppSelector } from '../../redux/hooks'
 import { NavLink } from 'react-router-dom'
 import LinkButton from '../Buttons/LinkButton'
 
@@ -11,8 +9,6 @@ type panelTypes = {
 }
 
 const Panel: React.FC<panelTypes> = ({ changeMenuActive }) => {
-    const current = useAppSelector(state => state.countryFilter.currentCountry)
-
     return (
         <div className={s.panel}>
             <div>
@@ -25,11 +21,6 @@ const Panel: React.FC<panelTypes> = ({ changeMenuActive }) => {
                 {
                     window.innerWidth > 1070 ?
                         <span className={s.filter}>
-                            <button>
-                                <img src={current.flag} alt='flag' />
-                                {current.country}
-                                <Dropdown />
-                            </button>
                             <label>
                                 <input
                                     type='text'

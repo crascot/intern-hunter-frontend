@@ -45,22 +45,9 @@
     border-bottom: 1px solid var(--blue);
 }
 
-.tools {
-    width: 280px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-.tools p {
-    margin-left: 8px;
-}
-
 @media (max-width: 1350px) {
     .nav {
         max-width: 1000px;
-    }
-    .tools {
-        justify-content: flex-end;
     }
 }
 
@@ -73,11 +60,5 @@
     }
     .nav ul {
         padding: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .tools {
-        display: none;
     }
 }

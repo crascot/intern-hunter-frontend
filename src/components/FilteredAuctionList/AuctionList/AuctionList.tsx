@@ -1,21 +1,13 @@
 import React from 'react'
 import s from './AuctionList.module.css'
+import { AuctionType } from '../../../types/auctonType'
 
-type AuctionListType = {
-    title: string,
-    minSalary: number,
-    maxSalary: number,
-    avatar: string,
-    nameCompany: string
-}
-
-const AuctionList: React.FC<AuctionListType> = ({ title, minSalary, maxSalary, avatar, nameCompany }) => (
+const AuctionList: React.FC<AuctionType> = ({ titelname, active, creator }) => (
     <div className={`${s.auctionItem}`}>
-        <h4>{title}</h4>
-        <span>Оплата: {minSalary}сом - {maxSalary}сом</span>
+        <h4>{titelname}</h4>
+        <span>{active}</span>
         <span className={s.companyInfo}>
-            <img src={avatar} alt='avatar company' />
-            <h5>{nameCompany}</h5>
+            <h5>{creator}</h5>
         </span>
     </div>
 )

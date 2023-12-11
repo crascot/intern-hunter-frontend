@@ -1,16 +1,11 @@
+import React from 'react'
 import s from './Description.module.css'
-import { useSelector } from 'react-redux';
 
 const Description = () => {
-  const userState = useSelector((state: any) => state.authSlice.user);
-  const user = userState?.data;
-
-  if (!userState) return <></>;
-
   return (
     <div className={s.container}>
       <div className={s.info}>
-        {/* <span>
+        <span>
           <h4>Job Description</h4>
           <p>
             Velstar is a Shopify Plus agency, and we partner with brands to help them grow, we also do the same with our people!
@@ -24,8 +19,7 @@ const Description = () => {
           <p>
             Want to work with us? You're in good company!
           </p>
-        </span> */}
-        {user.skills}
+        </span>
       </div>
       <div className={s.overview}>
         <div className={s.salary}>

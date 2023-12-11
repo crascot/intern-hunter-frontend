@@ -41,31 +41,6 @@
     background: var(--white);
     overflow: hidden;
 }
-.filter button {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    border: none;
-    background-color: var(--white);
-    cursor: pointer;
-    padding: 0 20px 0 24px;
-    height: 100%;
-    margin-left: -10px;
-    border-radius: 8px 0 0 8px;
-    margin-right: -1px;
-    transition: 0.4s;
-    user-select: none;
-}
-.filter button:hover {
-    transition: 0.4s;
-    background-color: var(--gray-blue);
-}
-.filter button svg {
-    margin-left: 12px;
-}
-.filter button img {
-    margin-right: 12px;
-}
 
 .filter input {
     width: 90%;
@@ -73,10 +48,9 @@
     border-top: none;
     border-right: none;
     border-bottom: none;
-    border-left: 1px solid var(--gray-blue);
     height: 32px;
     margin: 0 auto;
-    padding-left: 56px;
+    padding-left: 36px;
 }
 
 .filter label {
@@ -87,7 +61,6 @@
 .filter label:before {
     content: "";
     position: absolute;
-    left: 20px;
     top: 0;
     margin-top: 4px;
     bottom: 0;

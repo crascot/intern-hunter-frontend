@@ -1,10 +1,21 @@
 import { configureStore } from '@reduxjs/toolkit'
-import countryFilterReducer from './countryFilter/countryFilterSlice'
+import { auctionAPI } from './auctionAPI'
+import { usersAPI } from './usersAPI'
+import { formAPI } from './formAPI'
+import authSlice from './authSlice/authSlice'
 
 export const store = configureStore({
-  reducer: {
-    countryFilter: countryFilterReducer
-  },
+    reducer: {
+        [auctionAPI.reducerPath]: auctionAPI.reducer,
+        [usersAPI.reducerPath]: usersAPI.reducer,
+        [formAPI.reducerPath]: formAPI.reducer,
+        authSlice
+    },
+    middleware: (getDefultMiddleware) =>
+        getDefultMiddleware().concat(
+            auctionAPI.middleware,
+            usersAPI.middleware, formAPI.middleware
+        )
 })
 
 export type RootState = ReturnType<typeof store.getState>

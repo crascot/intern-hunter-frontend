@@ -1,55 +1,40 @@
 import AuctionList from './AuctionList/AuctionList'
 import s from './FilteredAuctionList.module.css'
-import logo from './AuctionList/logo.png'
 import { ReactComponent as Arrow } from '../../icons/arrow-right.svg'
 import { useState } from 'react'
+import { useGetAuctionsQuery } from '../../redux/auctionAPI'
+import { AuctionType } from '../../types/auctonType'
 
 const FilteredAuctionList = () => {
-  const testList = [
-    {
-      id: 0,
-      title: 'Фронтенд разработчик',
-      minSalary: 20000,
-      maxSalary: 40000,
-      avatar: logo,
-      nameCompany: 'Jembrij'
-    },
-    {
-      id: 1,
-      title: 'Фронтенд разработчик',
-      minSalary: 20000,
-      maxSalary: 40000,
-      avatar: logo,
-      nameCompany: 'Jembrij'
-    },
-    {
-      id: 2,
-      title: 'Фронтенд разработчик',
-      minSalary: 20000,
-      maxSalary: 40000,
-      avatar: logo,
-      nameCompany: 'Jembrij'
-    },
-  ]
-
-  const testPages = [1, 2, 3]
-
   const [currentPage, setCurrentPage] = useState(1);
+
+  const { data, isLoading } = useGetAuctionsQuery(currentPage);
+
+  const testPages = data && data.results.map((_: never, i: string) => i + 1)
+
   const changePage = (page: number) => setCurrentPage(page)
   const decrement = () => setCurrentPage(prev => prev > 1 ? prev - 1 : prev)
-  const increment = () => setCurrentPage(prev => prev < testPages.length ? prev + 1 : prev)
+  const increment = () => {
+    setCurrentPage(prev => prev < testPages.length ? prev + 1 : prev)
+  }
+
+  let pagesArray = [];
+  for (let i = 0; i < data?.count / 6; i++) {
+    pagesArray.push(i + 1)
+  }
+
+
+  if (isLoading || !data.results) return <div>Загрузка</div>;
 
   return (
     <div className={s.container}>
       {
-        testList.map((auction) =>
+        data?.results.map((auction: AuctionType) =>
           <AuctionList
-            title={auction.title}
-            minSalary={auction.minSalary}
-            maxSalary={auction.maxSalary}
-            avatar={auction.avatar}
-            nameCompany={auction.nameCompany}
-            key={auction.id}
+            titelname={auction.titelname}
+            active={auction.active}
+            creator={auction.creator}
+            key={auction.auctionId}
           />
         )
       }
@@ -58,7 +43,7 @@ const FilteredAuctionList = () => {
         <ul>
           <li onClick={decrement} className={s.arrow}><Arrow /></li>
           {
-            testPages.map((page, i) => (
+            pagesArray.map((page: number, i: number) => (
               <li
                 onClick={() => changePage(page)}
                 className={currentPage === page ? s.active : ''}

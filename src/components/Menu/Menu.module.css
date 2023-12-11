@@ -60,3 +60,34 @@
     padding-left: 15px;
     display: flex;
 }
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 15px;
+    margin: -10px !important;
+}
+
+.buttons a:first-child {
+    color: var(--blue) !important;
+    border-color: var(--gray-blue);
+    background-color: var(--gray-blue);
+    transition: 0.4s;
+}
+.buttons a:first-child:hover {
+    border-color: var(--blue);
+    transition: 0.4s;
+}
+
+.buttons a:last-child {
+    color: var(--white);
+    background-color: var(--blue) !important;
+    border-color: var(--blue) !important;
+    transition: 0.4s;
+}
+.buttons a:last-child:hover {
+    color: var(--blue);
+    background-color: var(--white) !important;
+    transition: 0.4s;
+}

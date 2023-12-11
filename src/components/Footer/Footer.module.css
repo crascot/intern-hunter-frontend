@@ -1,6 +1,16 @@
 .footer {
+    padding: 0 15px;
     background-color: var(--dark-gray);
+    height: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.footer h1 {
-    color: var(--white);
+
+.footer div {
+    max-width: 1320px;
+    width: 100%;
+}
+.footer p {
+    color: var(--gray);
 }

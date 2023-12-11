@@ -30,7 +30,7 @@ const Title = () => {
                 <img src={image} alt='avatar' />
                 <span>
                     <h3>{user.username}</h3>
-                    <h4>Возраст: {user.years_old}</h4>
+                    <h4>От компании Google <span>FULL-TIME</span></h4>
                 </span>
             </div>
             <Button callback={signoutFunc} text='Выйти' />

@@ -1,25 +1,33 @@
-import React, { useEffect } from 'react'
-import { NavLink, useNavigate, useParams } from 'react-router-dom'
+import React, { useState } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { ReactComponent as Logo } from '../../../icons/logo.svg'
 import s from '../LoginRegister.module.css'
 import Button from '../../../components/Buttons/Button'
-import { testCallback } from '../../..'
-import { loginStudent, loginEmployer } from '../../../endpoints'
-import { RoleType } from '../../../types/Form'
+import { useSigninMutation } from '../../../redux/formAPI'
+import { useDispatch } from 'react-redux'
+import { setToken } from '../../../redux/authSlice/authSlice'
 
 const Login: React.FC = () => {
-  const { role } = useParams<{ role: RoleType }>();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (role !== 'student' && role !== 'employer') {
-      navigate(-1);
+  const [signin] = useSigninMutation();
+
+  const handleAddUser = async () => {
+    const newUser = { username: username, password: password };
+    if (newUser) {
+      await signin(newUser).unwrap()
+        .then((data) => {
+          dispatch(setToken(data.Token));
+          localStorage.setItem('token', data.Token);
+          navigate(-1);
+        })
+        .catch((e) => alert(e.data.error))
     }
-  }, [role, navigate]);
-
-  if (role !== 'student' && role !== 'employer') {
-    return null;
   }
+
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
 
   return (
     <div className={s.loginRegister}>
@@ -30,27 +38,12 @@ const Login: React.FC = () => {
         </NavLink>
       </div>
       {
-        role === 'student' ?
-          <form>
-            <h2>Войти как студент</h2>
-            <input placeholder='Имя' type="text" />
-            <input placeholder='Фамилия' type="text" />
-            <input placeholder='Очество' type="text" />
-            <input placeholder='Пароль' type="password" />
-            <Button callback={testCallback} text='Войти' />
-            <NavLink to={loginEmployer}>Я представитель компании</NavLink>
-          </form>
-          :
-          role === 'employer' ?
-            <form>
-              <h2>Войти как представитель</h2>
-              <input placeholder='Название вашей компании' type="text" />
-              <input placeholder='Пароль' type="password" />
-              <Button callback={testCallback} text='Войти' />
-              <NavLink to={loginStudent}>Я студент</NavLink>
-            </form>
-            :
-            ''
+        <div className={s.form}>
+          <h2>Войти в аккаунт</h2>
+          <input placeholder='Имя' type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+          <input placeholder='Пароль' type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <Button callback={handleAddUser} text='Войти' />
+        </div>
       }
     </div>
   )

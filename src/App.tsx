@@ -1,7 +1,10 @@
-import { ElementType, lazy, Suspense } from 'react';
+import { ElementType, lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import { auctions, createAuction, profile, login, main, register } from './endpoints';
+import { useDispatch, useSelector } from 'react-redux';
+import { setToken, setUser } from './redux/authSlice/authSlice';
+import { useProfileMutation } from './redux/usersAPI';
 const LazyMain = lazy(() => import('./pages/Main/Main'))
 const LazyAuctions = lazy(() => import('./pages/Auctions/Auctions'))
 const LazyProfile = lazy(() => import('./pages/Profile/Profile'))
@@ -43,6 +46,25 @@ const routes = [
 ]
 
 function App() {
+  const token = localStorage.getItem('token');
+  const dispatch = useDispatch()
+  const authToken = useSelector((state: any) => state.authSlice.token)
+  const user = useSelector((state: any) => state.authSlice.user)
+  const [getProfileData] = useProfileMutation()
+
+  useEffect(() => {
+    if (!authToken && token) {
+      dispatch(setToken(token))
+    }
+  }, [authToken, dispatch, token])
+
+  useEffect(() => {
+    if (!user) {
+      getProfileData('')
+      .then((data) => dispatch(setUser(data)))
+    }
+  }, [getProfileData, user, dispatch])
+
   return (
     <BrowserRouter basename={main}>
       <Routes>

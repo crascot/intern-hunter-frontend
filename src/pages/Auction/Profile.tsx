@@ -16,14 +16,14 @@ const Profile = () => {
 
     if (token) {
         return (
-            <div className={s.profile}>
+            <>
                 <NavbarMenuWrapper current='Профиль' />
                 <div className={s.container}>
                     <Title />
                     <Description />
                 </div>
                 <Footer />
-            </div>
+            </>
         )
     } else return <></>
 }

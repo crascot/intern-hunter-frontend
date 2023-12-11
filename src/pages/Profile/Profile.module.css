@@ -3,3 +3,9 @@
     width: 100vw;
     margin: 0 auto;
 }
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
