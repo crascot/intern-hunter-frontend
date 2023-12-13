@@ -1,34 +1,33 @@
-import React from 'react'
 import mainSearch from '../../../images/main-search.png'
 import s from './MainSearch.module.css'
-import job from '../../../icons/main-search-block-icons/job.svg'
-import companies from '../../../icons/main-search-block-icons/companies.svg'
-import candidates from '../../../icons/main-search-block-icons/candidates.svg'
-import Block from '../../../components/Block/Block'
+// import job from '../../../icons/main-search-block-icons/job.svg'
+// import companies from '../../../icons/main-search-block-icons/companies.svg'
+// import candidates from '../../../icons/main-search-block-icons/candidates.svg'
+// import Block from '../../../components/Block/Block'
 
 const MainSearch = () => {
-  const blocksData = [
-    {
-      icon: job,
-      count: '175,324',
-      text: 'Аукцион'
-    },
-    {
-      icon: companies,
-      count: '97,354',
-      text: 'Компаний'
-    },
-    {
-      icon: candidates,
-      count: '3,847,154',
-      text: 'Работников'
-    },
-    {
-      icon: job,
-      count: '7,532',
-      text: 'Новых аукционов'
-    },
-  ]
+  // const blocksData = [
+  //   {
+  //     icon: job,
+  //     count: '175,324',
+  //     text: 'Аукцион'
+  //   },
+  //   {
+  //     icon: companies,
+  //     count: '97,354',
+  //     text: 'Компаний'
+  //   },
+  //   {
+  //     icon: candidates,
+  //     count: '3,847,154',
+  //     text: 'Работников'
+  //   },
+  //   {
+  //     icon: job,
+  //     count: '7,532',
+  //     text: 'Новых аукционов'
+  //   },
+  // ]
 
   return (
     <div className={s.container}>
@@ -47,7 +46,7 @@ const MainSearch = () => {
           />
         </div>
       </div>
-      <div className={s.blocks}>
+      {/* <div className={s.blocks}>
         {
           blocksData.map((block, i) => (
             <Block
@@ -58,7 +57,7 @@ const MainSearch = () => {
             />
           ))
         }
-      </div>
+      </div> */}
     </div>
   )
 }

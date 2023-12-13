@@ -6,6 +6,8 @@ import { MenuType } from '../../types/menuType'
 import LinkButton from '../Buttons/LinkButton'
 
 const Menu: React.FC<MenuType> = ({ links, changeMenuActive }) => {
+  const token = localStorage.getItem('token')
+
   return (
     <div className={s.container} onClick={changeMenuActive}>
       <div className={s.menu} onClick={(e) => e.stopPropagation()}>
@@ -24,7 +26,7 @@ const Menu: React.FC<MenuType> = ({ links, changeMenuActive }) => {
           }
         </ul>
         <div className={s.buttons}>
-          <LinkButton link='/login/student' text='Войти' />
+          {!token ? <LinkButton link='/login/student' text='Войти' /> : ''}
           <LinkButton link='/profile' text='Профиль' />
         </div>
       </div>

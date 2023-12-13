@@ -76,7 +76,30 @@
     line-height: 24px;
     background-color: var(--white);
 }
-.buttons a:first-child {
+
+.login a {
+    color: var(--blue) !important;
+    border-color: var(--gray-blue);
+    transition: 0.4s;
+}
+.login a:hover {
+    border-color: var(--blue);
+    transition: 0.4s;
+}
+
+.profile a {
+    margin-left: 12px;
+    color: var(--white);
+    background-color: var(--blue) !important;
+    border-color: var(--blue) !important;
+    transition: 0.4s;
+}
+.profile a:hover {
+    color: var(--blue);
+    background-color: var(--white) !important;
+    transition: 0.4s;
+}
+/* .buttons a:first-child {
     color: var(--blue) !important;
     border-color: var(--gray-blue);
     transition: 0.4s;
@@ -97,7 +120,7 @@
     color: var(--blue);
     background-color: var(--white) !important;
     transition: 0.4s;
-}
+} */
 
 @media (max-width: 1350px) {
     .panel {

@@ -19,12 +19,11 @@ const FilteredAuctionList = () => {
   }
 
   let pagesArray = [];
-  for (let i = 0; i < data?.count / 6; i++) {
+  for (let i = 0; i < data?.count / 9; i++) {
     pagesArray.push(i + 1)
   }
 
-
-  if (isLoading || !data.results) return <div>Загрузка</div>;
+  if (isLoading || !data.results) return <div>Загрузка</div>;  
 
   return (
     <div className={s.container}>
@@ -34,6 +33,8 @@ const FilteredAuctionList = () => {
             titelname={auction.titelname}
             active={auction.active}
             creator={auction.creator}
+            auctionId={auction.auctionId}
+            end_date={auction.end_date}
             key={auction.auctionId}
           />
         )

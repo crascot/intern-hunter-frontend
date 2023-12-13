@@ -12,6 +12,12 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+.close {
+    background-color: var(--active);
+    color: var(--white);
+}
+
 .auctionItem:hover {
     transition: 0.4s;
     box-shadow: 5px 5px 50px 5px rgba(0, 44, 109, 0.10);

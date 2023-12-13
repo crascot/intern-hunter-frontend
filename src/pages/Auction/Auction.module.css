@@ -1,0 +1,140 @@
+.container {
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.auction {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    width: inherit;
+    height: 80vh;
+    margin: 0 auto;
+    border: 1px solid var(--blue);
+    background-color: var(--gray-blue);
+    border-radius: 8px;
+}
+
+.mans, .info {
+    height: 100%;
+}
+
+.creator {
+    margin-top: -15px;
+    margin-left: -15px;
+    border-right: 1px solid var(--blue);
+    border-bottom: 1px solid var(--blue);
+    border-radius: 8px 0 0 0;
+    padding: 15px;
+}
+.students {
+    margin-top: -15px;
+    margin-left: -15px;
+    padding: 15px;
+    border-right: 1px solid var(--blue);
+    border-bottom: 1px solid var(--blue);
+    border-radius: 0 0 8px 0;
+    overflow-y: auto;
+}
+
+.students li {
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.info {
+    margin: 0 auto;
+    width: 40vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info span {
+    height: 60%;
+}
+.info span h4 {
+    max-height: 40%;
+    overflow-y: auto;
+}
+
+.info h3 {
+    margin-bottom: 15px;
+}
+.info input {
+    width: 20vw;
+    border-radius: 8px;
+    height: 60px;
+    outline: none;
+    margin: 30px 0;
+    padding-left: 15px;
+}
+.info button {
+    width: 300px;
+    height: 60px;
+    background-color: var(--blue);
+    border: 1px solid var(--white);
+    color: var(--white);
+    font-weight: 600;
+    transition: 0.4s;
+}
+.info button:hover {
+    background-color: var(--white);
+    border: 1px solid var(--blue);
+    color: var(--blue);
+    transition: 0.4s;
+}
+
+.current {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.4s;
+}
+.current a {
+    font-size: 30px;
+}
+.current a:hover {
+    text-decoration: underline;
+}
+.current input {
+    margin-bottom: 0;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    overflow-y: auto;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+@media (max-width: 1320px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+@media (max-width: 1070px) {
+    .container {
+        max-width: 903px;
+    }
+    .auction {
+        margin: 0 30px;
+    }
+}

@@ -9,6 +9,8 @@ type panelTypes = {
 }
 
 const Panel: React.FC<panelTypes> = ({ changeMenuActive }) => {
+    const token = localStorage.getItem('token')
+
     return (
         <div className={s.panel}>
             <div>
@@ -20,14 +22,15 @@ const Panel: React.FC<panelTypes> = ({ changeMenuActive }) => {
                 </NavLink>
                 {
                     window.innerWidth > 1070 ?
-                        <span className={s.filter}>
-                            <label>
-                                <input
-                                    type='text'
-                                    placeholder='Job tittle, keyword, company'
-                                />
-                            </label>
-                        </span>
+                        // <span className={s.filter}>
+                        //     <label>
+                        //         <input
+                        //             type='text'
+                        //             placeholder='Job tittle, keyword, company'
+                        //         />
+                        //     </label>
+                        // </span>
+                        ''
                         :
                         <MenuIcon onClick={changeMenuActive} />
                 }
@@ -35,8 +38,8 @@ const Panel: React.FC<panelTypes> = ({ changeMenuActive }) => {
             {
                 window.innerWidth > 1070 ?
                     <div className={s.buttons}>
-                        <LinkButton link='/login/student' text='Войти' />
-                        <LinkButton link='/profile' text='Профиль' />
+                        {!token ? <span className={s.login}><LinkButton link='/login/student' text='Войти' /></span> : ''}
+                        <span className={s.profile}><LinkButton link='/profile' text='Профиль' /></span>
                     </div>
                     :
                     ''

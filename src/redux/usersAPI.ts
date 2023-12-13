@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const usersAPI = createApi({
     reducerPath: 'usersApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://26.18.250.193:8000/',
+        baseUrl: 'http://26.18.250.193:8000/api/',
         prepareHeaders: (headers, { getState }: any) => {
             const { authSlice } = getState();
             headers.set('Authorization', `Token ${authSlice.token ?? ''}`)
@@ -14,20 +14,64 @@ export const usersAPI = createApi({
         getUser: build.query({
             query: (id) => `search-student/${id}`,
         }),
-        addUser: build.mutation({
+        profile: build.mutation({
+            query: () => ({
+                url: 'profile',
+                method: 'GET'
+            })
+        }),
+        editProfile: build.mutation({
+            query: (body) => ({
+                url: 'profile',
+                method: 'POST',
+                body
+            })
+        }),
+
+        getAuction: build.query({
+            query: (id) => `auction-detail/${id}`,
+        }),
+
+        sendTask: build.mutation({
+            query: (body) => ({
+                url: `auction-detail/${body.id}/task-create`,
+                method: 'POST',
+                body: { task: body.task }
+            })
+        }),
+
+        createAuction: build.mutation({
             query: (body) => ({
                 url: 'auction-create',
                 method: 'POST',
                 body
             })
         }),
-        profile: build.mutation({
-            query: () => ({
-                url: 'profile',
-                method: 'GET'
+        activeAuction: build.mutation({
+            query: (body) => ({
+                url: `auction-edit/${body.id}`,
+                method: 'PUT',
+                body: body.auction
+            })
+        }),
+
+        ratingStudent: build.mutation({
+            query: (body) => ({
+                url: `auction-detail/${body.id}/rating-add`,
+                method: 'POST',
+                body: body.student
             })
         })
     })
 })
 
-export const { useGetUserQuery, useAddUserMutation, useProfileMutation } = usersAPI;
+export const {
+    useGetUserQuery,
+    useProfileMutation,
+    useEditProfileMutation,
+    useGetAuctionQuery,
+    useSendTaskMutation,
+    useCreateAuctionMutation,
+    useActiveAuctionMutation,
+    useRatingStudentMutation
+} = usersAPI;

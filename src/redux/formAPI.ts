@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const formAPI = createApi({
     reducerPath: 'formAPI',
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://26.18.250.193:8000/' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'http://26.18.250.193:8000/api/' }),
     endpoints: (build) => ({
         signupStudent: build.mutation({
             query: (body) => ({

@@ -1,7 +1,7 @@
 import { ElementType, lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
-import { auctions, createAuction, profile, login, main, register } from './endpoints';
+import { auctions, createAuction, profile, login, main, register, auctionInfo } from './endpoints';
 import { useDispatch, useSelector } from 'react-redux';
 import { setToken, setUser } from './redux/authSlice/authSlice';
 import { useProfileMutation } from './redux/usersAPI';
@@ -11,6 +11,7 @@ const LazyProfile = lazy(() => import('./pages/Profile/Profile'))
 const LazyLogin = lazy(() => import('./pages/LoginRegisterPages/Login/Login'))
 const LazyRegister = lazy(() => import('./pages/LoginRegisterPages/Register/Register'))
 const LazyCreateAuction = lazy(() => import('./pages/CreateAuction/CreateAuction'))
+const LazyAuctionInfo = lazy(() => import('./pages/Auction/Auction'))
 
 const withSuspense = (Component: ElementType) => (
   <Suspense fallback='Загрузка...'>
@@ -42,6 +43,10 @@ const routes = [
   {
     path: createAuction,
     element: LazyCreateAuction
+  },
+  {
+    path: auctionInfo,
+    element: LazyAuctionInfo
   }
 ]
 

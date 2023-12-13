@@ -1,0 +1,50 @@
+.container {
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+}
+
+.dropdown {
+    width: 60vw;
+    border: 1px solid var(--blue);
+    background-color: var(--gray-blue);
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.closeBlock {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+.closeBlock button {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 0;
+    background-color: var(--blue);
+    color: var(--white);
+    transition: 0.4s;
+}
+.closeBlock button:hover {
+    background-color: var(--white);
+    color: var(--blue);
+    transition: 0.4s;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+.inputs input {
+    height: 30px;
+    margin: 15px 0;
+    padding: 15px 0 15px 15px;
+    border-radius: 8px;
+}
